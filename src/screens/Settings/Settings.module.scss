@@ -1,0 +1,116 @@
+@import "../../styles/helpers";
+
+.settings {
+  display: flex;
+  align-items: flex-start;
+  padding: 24px;
+  border-radius: 8px;
+  background: $n1;
+  @include t {
+    display: block;
+  }
+  @include m {
+    padding: 24px 16px;
+  }
+  @include dark {
+    background: $n7;
+  }
+}
+.menu {
+  position: sticky;
+  top: 116px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 280px;
+  @include d {
+    width: 210px;
+  }
+  @include t {
+    display: none;
+  }
+  .button {
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-align: left;
+    @include base1-s;
+    color: $n4;
+    transition: all .2s;
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+    &:hover,
+    &.active {
+      color: $n7;
+      @include dark {
+        color: $n1;
+      }
+    }
+    &.active {
+      background: $n3;
+      @include dark {
+        background: $n6;
+      }
+    }
+  }
+}
+.wrapper {
+  flex-grow: 1;
+  padding-left: 32px;
+  @include t {
+    padding-left: 0;
+  }
+  & > .button {
+    margin-top: 48px;
+    @include t {
+      margin-top: 32px;
+    }
+  }
+}
+.dropdown {
+  display: none;
+  @include t {
+    display: block;
+    margin-bottom: 32px;
+  }
+  @include m {
+    margin-bottom: 24px;
+  }
+}
+.dropdownHead {
+  @include dark {
+    background: $n6;
+    box-shadow: 0 0 0 $n6 inset;
+  }
+}
+.item {
+  position: relative;
+  @include t {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+  &:not(:last-child) {
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid $n3;
+    @include t {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border: none;
+    }
+    @include dark {
+      border-color: $n6;
+    }
+  }
+}
+.anchor {
+  position: absolute;
+  top: -116px;
+  left: 0;
+  right: 0;
+  @include t {
+    top: -106px;
+  }
+}

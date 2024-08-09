@@ -1,0 +1,84 @@
+@import "../../../styles/helpers";
+
+.title {
+  margin-bottom: 24px;
+}
+.container {
+  display: flex;
+  padding: 48px;
+  border-radius: 8px;
+  background: $n1;
+  @include d {
+    padding: 32px;
+  }
+  @include t {
+    display: block;
+  }
+  @include m {
+    padding: 24px;
+  }
+  @include dark {
+    background: $n7;
+  }
+}
+.sidebar {
+  flex-shrink: 0;
+  width: 224px;
+  @include t {
+    width: 100%;
+    margin-bottom: 32px;
+  }
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+  @include t {
+    display: none;
+  }
+  .button {
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-align: left;
+    @include base1-s;
+    color: $n4;
+    transition: all .2s;
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+    &:hover,
+    &.active {
+      color: $n7;
+      @include dark {
+        color: $n1;
+      }
+    }
+    &.active {
+      background: $n3;
+      @include dark {
+        background: $n6;
+      }
+    }
+  }
+}
+.dropdown {
+  display: none;
+  @include t {
+    display: block;
+  }
+}
+.dropdownHead {
+  @include dark {
+    background: $n6;
+    box-shadow: inset 0 0 0 2px $n6;
+  }
+}
+.list {
+  flex-grow: 1;
+  padding-left: 64px;
+  @include d {
+    padding-left: 48px;
+  }
+  @include t {
+    padding-left: 0;
+  }
+}

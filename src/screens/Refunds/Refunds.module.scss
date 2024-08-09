@@ -1,0 +1,103 @@
+@import "../../styles/helpers";
+
+.head {
+  @include m {
+    display: block;
+  }
+}
+.title {
+  @include m {
+    margin: 0 0 16px;
+  }
+}
+.nav {
+  display: flex;
+  margin-left: auto;
+  .button {
+    padding: 8px 16px;
+    border-radius: 8px;
+    @include base1-s;
+    color: $n4;
+    transition: all .2s;
+    @include m {
+      flex: 1;
+    }
+    &:hover,
+    &.active {
+      color: $n7;
+      @include dark {
+        color: $n1;
+      }
+    }
+    &.active {
+      background: $n3;
+      @include dark {
+        background: $n6;
+      }
+    }
+    &:not(:last-child) {
+      margin-right: 4px;
+      @include m {
+        margin-right: 0;
+      }
+    }
+  }
+}
+.wrapper {
+  margin: 0 -12px;
+  @include m {
+    margin: 0;
+  }
+}
+.table {
+  display: table;
+  width: 100%;
+  @include m {
+    display: block;
+  }
+}
+.row {
+  display: table-row;
+  @include m {
+    display: flex;
+    margin-bottom: 24px;
+  }
+}
+.col {
+  display: table-cell;
+  padding: 4px 12px 16px;
+  @include caption2;
+  font-weight: 500;
+  color: $n4;
+  @include m {
+    padding: 0;
+  }
+  &:first-child {
+    @include m {
+      margin-right: auto;
+    }
+  }
+  &:nth-child(2) {
+    @include m {
+      display: none;
+    }
+  }
+  &:nth-child(3) {
+    @include t {
+      display: none;
+    }
+  }
+}
+.foot {
+  margin-top: 12px;
+  text-align: center;
+  @include m {
+    margin-top: 32px;
+  }
+  .button {
+    .loader {
+      transform: scale(.8);
+      margin: 0 18px 0 8px;
+    }
+  }
+}

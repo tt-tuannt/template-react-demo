@@ -1,0 +1,47 @@
+@import "../../styles/helpers";
+
+.row {
+  display: flex;
+  @include t {
+    display: block;
+  }
+}
+.col {
+  &:first-child {
+    flex: 0 0 calc(100% - 340px);
+    width: calc(100% - 340px);
+    padding-right: 8px;
+    @include w {
+      flex: 0 0 calc(100% - 310px);
+      width: calc(100% - 310px);
+    }
+    @include d {
+      flex: 0 0 calc(100% - 296px);
+      width: calc(100% - 296px);
+    }
+    @include t {
+      width: 100%;
+      margin-bottom: 8px;
+      padding-right: 0;
+    }
+  }
+  &:nth-child(2) {
+    flex-shrink: 0;
+    width: 340px;
+    @include w {
+      width: 310px;
+    }
+    @include d {
+      width: 296px;
+    }
+    @include t {
+      width: 100%;
+    }
+  }
+}
+.row,
+.card {
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}

@@ -1,0 +1,98 @@
+@import "../../styles/helpers";
+
+.head {
+  margin-bottom: 44px;
+  @include t {
+    margin-bottom: 32px;
+  }
+  @include m {
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+  .form {
+    margin-right: auto;
+    @include t {
+      width: 250px;
+    }
+    @include m {
+      width: 100%;
+      margin: 0 0 16px;
+    }
+  }
+  &.hidden {
+    @include t {
+      display: none;
+    }
+  }
+}
+.title {
+  margin-right: 24px;
+  @include m {
+    margin: 0 0 16px;
+  }
+}
+.nav {
+  display: flex;
+  @include m {
+    width: 100%;
+  }
+}
+.link {
+  padding: 8px 16px;
+  border-radius: 8px;
+  @include base1-s;
+  color: $n4;
+  transition: all .2s;
+  @include m {
+    flex: 1;
+  }
+  &:hover,
+  &.active {
+    color: $n7;
+    @include dark {
+      color: $n1;
+    }
+  }
+  &.active {
+    background: $n3;
+    @include dark {
+      background: $n6;
+    }
+  }
+  &:not(:last-child) {
+    margin-right: 8px;
+    @include m {
+      margin-right: 0;
+    }
+  }
+}
+.filters {
+  margin-left: 8px;
+  @include t {
+    display: none;
+  }
+}
+.details {
+  display: none;
+}
+.row {
+  &.flex {
+    display: flex;
+    .table {
+      flex-shrink: 0;
+      width: 384px;
+      @include w {
+        width: 350px;
+      }
+      @include d {
+        width: 320px;
+      }
+      @include t {
+        display: none;
+      }
+    }
+    .details {
+      display: block;
+    }
+  }
+}

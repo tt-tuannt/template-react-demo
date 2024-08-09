@@ -1,0 +1,30 @@
+@use "sass:math";
+@import "../../styles/helpers";
+
+.card {
+  position: relative;
+  padding: 24px;
+  background: $n1;
+  border-radius: 8px;
+  @include m {
+    padding: 16px;
+  }
+  @include dark {
+    background: $n7;
+  }
+}
+.head {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  margin-bottom: 32px;
+  @include m {
+    margin-bottom: 24px;
+  }
+}
+.title {
+  margin-right: auto;
+  @include m {
+    line-height: 40px;
+  }
+}

@@ -1,0 +1,18 @@
+@import "../../../styles/helpers";
+
+.head {
+  @include m {
+    display: block;
+  }
+}
+.title {
+  @include m {
+    margin-bottom: 16px;
+  }
+}
+.chart {
+  width: auto;
+  height: 250px;
+  margin-left: -35px;
+  margin-bottom: -10px;
+}

@@ -1,0 +1,41 @@
+@import "../../../styles/helpers";
+
+.messages {
+  flex-grow: 1;
+  border: 1px solid $n3;
+  border-radius: 12px;
+  @include t {
+    height: 100%;
+    border: none;
+  }
+  @include dark {
+    border-color: $n6;
+  }
+}
+.wrapper {
+  position: relative;
+  height: calc(100% - 104px);
+  padding: 96px 24px;
+  @include t {
+    height: calc(100% - 88px);
+  }
+  @include m {
+    height: calc(100% - 72px);
+    padding: 64px 16px 72px;
+  }
+}
+.button {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  @include m {
+    top: 12px;
+  }
+}
+.list {
+  max-height: 100%;
+  flex-grow: 1;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}

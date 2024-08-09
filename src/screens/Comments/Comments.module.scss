@@ -1,0 +1,29 @@
+@import "../../styles/helpers";
+
+.head {
+  margin-bottom: 44px;
+  @include t {
+    margin-bottom: 32px;
+  }
+  @include m {
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+  .form {
+    @include t {
+      width: 320px;
+    }
+    @include m {
+      width: 100%;
+    }
+  }
+}
+.title {
+  margin-right: 24px;
+  @include t {
+    margin-right: auto;
+  }
+  @include m {
+    margin: 0 0 16px;
+  }
+}

@@ -1,0 +1,10 @@
+@import "../../../styles/helpers";
+
+.field {
+  &:not(:last-child) {
+    margin-bottom: 32px;
+    @include d {
+      margin-bottom: 24px;
+    }
+  }
+}

@@ -1,0 +1,226 @@
+@use "sass:math";
+// media queries
+@mixin w {
+  @media only screen and (max-width: "1419px") {
+    @content;
+  }
+}
+@mixin x {
+  @media only screen and (max-width: "1339px") {
+    @content;
+  }
+}
+@mixin d {
+  @media only screen and (max-width: "1259px") {
+    @content;
+  }
+}
+@mixin t {
+  @media only screen and (max-width: "1023px") {
+    @content;
+  }
+}
+@mixin m {
+  @media only screen and (max-width: "767px") {
+    @content;
+  }
+}
+@mixin a {
+  @media only screen and (max-width: "639px") {
+    @content;
+  }
+}
+@mixin s {
+  @media only screen and (max-width: "474px") {
+    @content;
+  }
+} // fonts
+@mixin inter {
+  font-family: "Inter", sans-serif;
+}
+// colors
+$p1: #2a85ff;
+$p2: #83bf6e;
+$p3: #ff6a55;
+$p4: #8e59ff;
+$s1: #ffbc99;
+$s2: #cabdff;
+$s3: #b1e5fc;
+$s4: #b5e4ca;
+$s5: #ffd88d;
+
+$n: #ffffff;
+$n1: #fcfcfc;
+$n2: #f4f4f4;
+$n3: #efefef;
+$n4: #6f767e;
+$n5: #33383f;
+$n6: #272b30;
+$n7: #1a1d1f;
+$n8: #111315;
+
+$shades1: #9a9fa5;
+$shades2: #6f767e;
+$shades3: rgba(#6f767e, 0.4);
+$shades4: rgba(#111315, 0.5);
+
+// typography
+@mixin title1-s {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: math.div(30, 20);
+  letter-spacing: -0.02em;
+  @include m {
+    font-size: 18px;
+  }
+}
+@mixin title1-m {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: math.div(30, 20);
+  letter-spacing: -0.02em;
+  @include m {
+    font-size: 18px;
+  }
+}
+@mixin title2 {
+  font-size: 18px;
+  line-height: math.div(24, 18);
+  letter-spacing: -0.02em;
+}
+@mixin base1-s {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: math.div(24, 15);
+}
+@mixin base1-b {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: math.div(24, 15);
+}
+@mixin base2 {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: math.div(24, 15);
+}
+@mixin body1-m {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: math.div(24, 15);
+  letter-spacing: -0.015em;
+}
+@mixin body1-s {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: math.div(24, 15);
+  letter-spacing: -0.015em;
+}
+@mixin body2-s {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: math.div(24, 15);
+}
+@mixin caption1 {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: math.div(16, 13);
+}
+@mixin caption1-m {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: math.div(16, 13);
+}
+@mixin caption2 {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: math.div(16, 12);
+}
+@mixin caption2-m {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+}
+@mixin button1 {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: math.div(24, 15);
+}
+@mixin button2 {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: math.div(24, 13);
+}
+//triangle
+@mixin arr($width, $height, $bg, $direction) {
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  @if $direction == t {
+    border-width: 0 $width / 2 + px $height + px $width / 2 + px;
+    border-color: transparent transparent $bg transparent;
+  }
+  @if $direction == r {
+    border-width: $height / 2 + px 0 $height / 2 + px $width + px;
+    border-color: transparent transparent transparent $bg;
+  }
+  @if $direction == b {
+    border-width: $height + px $width / 2 + px 0 $width / 2 + px;
+    border-color: $bg transparent transparent transparent;
+  }
+  @if $direction == l {
+    border-width: $height / 2 + px $width + px $height / 2 + px 0;
+    border-color: transparent $bg transparent transparent;
+  }
+  @if $direction == tl {
+    border-width: $height + px $width + px 0 0;
+    border-color: $bg transparent transparent transparent;
+  }
+  @if $direction == tr {
+    border-width: 0 $width + px $height + px 0;
+    border-color: transparent $bg transparent transparent;
+  }
+  @if $direction == br {
+    border-width: 0 0 $height + px $width + px;
+    border-color: transparent transparent $bg transparent;
+  }
+  @if $direction == bl {
+    border-width: $width + px 0 0 $height + px;
+    border-color: transparent transparent transparent $bg;
+  }
+  // example;
+} // +arr(500,50, #000, l)
+// +arr(500,50, #000, bl)
+
+// placeholder
+@mixin placeholder {
+  &::placeholder {
+    @content;
+
+    // media query width
+  }
+}
+@mixin r($width) {
+  @media only screen and (max-width: #{width}px) {
+    @content;
+  }
+}
+@mixin rmin($width) {
+  @media only screen and (min-width: #{width}px) {
+    @content;
+  }
+} // theme
+@mixin dark {
+  @at-root :global(.dark-mode) & {
+    @content;
+  }
+}
+@mixin dark-body {
+  @at-root .dark-mode {
+    @content;
+  }
+}
+@mixin dark-common {
+  @at-root .dark-mode & {
+    @content;
+  }
+}

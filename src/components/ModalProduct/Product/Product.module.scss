@@ -1,0 +1,80 @@
+@use "sass:math";
+@import "../../../styles/helpers";
+
+.product {
+  position: relative;
+  max-width: 1020px;
+  background: $n1;
+  border-radius: 8px;
+  @include d {
+    max-width: calc(100% - 88px);
+  }
+  @include m {
+    max-width: 100%;
+  }
+  @include dark {
+    background: $n7;
+  }
+  &.active {
+    display: flex;
+    max-width: 1440px;
+    @include d {
+      max-width: 100%;
+      margin-right: 0;
+    }
+    .details {
+      flex: 0 0 calc(100% - 472px);
+      width: calc(100% - 472px);
+      @include d {
+        display: none;
+      }
+    }
+    .comments {
+      display: block;
+    }
+    .panel,
+    .next {
+      display: none;
+    }
+  }
+}
+.comments {
+  display: none;
+  flex-shrink: 0;
+  width: 472px;
+  @include d {
+    width: 600px;
+  }
+  @include t {
+    width: 100%;
+  }
+}
+.next {
+  position: absolute;
+  left: calc(100% + 24px);
+  bottom: 256px;
+  width: 64px;
+  height: 64px;
+  background: $n;
+  border-radius: 50%;
+  @include d {
+    left: auto;
+    right: -88px;
+    bottom: 0;
+  }
+  @include m {
+    display: none;
+  }
+  @include dark {
+    background: $n6;
+  }
+  svg {
+    fill: $n4;
+    transition: fill .2s;
+  }
+  &:hover {
+    svg {
+      fill: $p1;
+    }
+  }
+}

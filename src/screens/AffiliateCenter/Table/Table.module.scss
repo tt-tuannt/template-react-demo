@@ -1,0 +1,72 @@
+@import "../../../styles/helpers";
+
+.wrapper {
+  background: $n1;
+  border-radius: 8px;
+  @include dark {
+    background: $n7;
+  }
+}
+.table {
+  display: table;
+  width: 100%;
+}
+.row {
+  display: table-row;
+  &:first-child {
+    .col {
+      padding-top: 24px;
+      padding-bottom: 24px;
+      @include caption2;
+      font-weight: 500;
+      color: $n4;
+      @include m {
+        padding: 16px;
+      }
+    }
+  }
+  &:nth-child(2n) {
+    .col {
+      background: rgba($n3, .35);
+      @include dark {
+        background: rgba($n8, .5);
+      }
+    }
+  }
+}
+.col {
+  display: table-cell;
+  padding: 16px;
+  white-space: nowrap;
+  @include d {
+    padding: 16px 8px;
+  }
+  @include m {
+    padding-left: 16px;
+  }
+  &:first-child {
+    padding-left: 24px;
+    color: $n4;
+    @include d {
+      font-size: 13px;
+    }
+    @include m {
+      padding-left: 16px;
+    }
+  }
+  &:last-child {
+    padding-right: 24px;
+  }
+  &:nth-child(3n+1) {
+    @include m {
+      display: none;
+    }
+  }
+}
+.tooltip {
+  position: relative;
+  top: -1px;
+  svg {
+    fill: $shades1;
+  }
+}

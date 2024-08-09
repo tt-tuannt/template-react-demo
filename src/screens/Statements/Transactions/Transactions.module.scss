@@ -1,0 +1,171 @@
+@import "../../../styles/helpers";
+
+.head {
+  @include m {
+    flex-wrap: wrap;
+    .title {
+      width: 100%;
+      flex-grow: 1;
+      margin: 0 0 16px;
+    }
+  }
+}
+.button {
+  margin-left: 16px;
+  @include m {
+    flex-grow: 1;
+  }
+}
+.wrapper {
+  margin: 0 -24px;
+  background: $n1;
+  @include m {
+    margin: 0 -16px;
+  }
+  @include dark {
+    background: transparent;
+  }
+}
+.table {
+  display: table;
+  width: 100%;
+  @include t {
+    display: block;
+  }
+}
+.row {
+  display: table-row;
+  @include t {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 24px;
+  }
+  @include m {
+    padding: 16px;
+  }
+  &:first-child {
+    @include t {
+      display: none;
+    }
+    .col {
+      padding-top: 8px;
+      padding-bottom: 16px;
+      @include caption2;
+      font-weight: 500;
+      color: $n4;
+    }
+  }
+  &:nth-child(2n) {
+    @include t {
+      background: rgba($n3, .35);
+      @include dark {
+        background: rgba($n6, .5);
+      }
+    }
+    .col {
+      background: rgba($n3, .35);
+      @include t {
+        background: none;
+      }
+      @include dark {
+        background: rgba($n6, .5);
+        @include t {
+          background: none;
+        }
+      }
+    }
+  }
+}
+.col {
+  display: table-cell;
+  padding: 10px 16px;
+  @include base2;
+  @include t {
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+  &:first-child {
+    padding-left: 24px;
+    @include t {
+      padding-left: 0;
+    }
+  }
+  &:nth-child(2) {
+    @include t {
+      align-items: flex-start;
+      order: -1;
+      padding-bottom: 12px;
+      border-bottom: 1px solid $n3;
+      @include dark {
+        border-color: $n6;
+      }
+    }
+  }
+  &:nth-child(3) {
+    @include t {
+      display: none;
+    }
+  }
+  &:last-child {
+    padding-right: 24px;
+    @include t {
+      padding-right: 0;
+    }
+  }
+  &:not(:last-child) {
+    @include t {
+      margin-bottom: 12px;
+    }
+  }
+}
+.status {
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-size: 14px;
+  line-height: 28px;
+  font-weight: 600;
+  color: $n7;
+}
+.details {
+  display: none;
+  @include t {
+    display: block;
+    margin-right: auto;
+    padding-right: 16px;
+  }
+}
+.product {
+  color: $n5;
+  @include dark {
+    color: $n3;
+  }
+}
+.invoice {
+  margin-top: 4px;
+  @include caption2;
+  font-weight: 500;
+  color: $n4;
+}
+.negative {
+  color: $p3;
+}
+.foot {
+  padding: 12px 0;
+  text-align: center;
+  .button {
+    .loader {
+      transform: scale(.8);
+      margin: 0 18px 0 8px;
+    }
+  }
+}
+.label {
+  display: none;
+  margin-right: auto;
+  @include base2;
+  color: $n4;
+  @include t {
+    display: block;
+  }
+}

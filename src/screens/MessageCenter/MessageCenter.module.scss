@@ -1,0 +1,52 @@
+@import "../../styles/helpers";
+
+.wrapper {
+  display: flex;
+  height: 776px;
+  padding: 12px;
+  border-radius: 8px;
+  background: $n1;
+  @include w {
+    height: 700px;
+  }
+  @include t {
+    display: block;
+    height: calc(100vh - 218px);
+    padding: 0;
+    &.active {
+      .users {
+        display: none;
+      }
+      .messages {
+        display: block;
+      }
+    }
+  }
+  @include m {
+    height: calc(100vh - 184px);
+  }
+  @include dark {
+    background: $n7;
+  }
+}
+.users {
+  flex-shrink: 0;
+  width: 340px;
+  padding: 12px;
+  @include d {
+    width: 310px;
+  }
+  @include t {
+    width: 100%;
+    height: 100%;
+    padding: 24px 32px;
+  }
+  @include m {
+    padding: 16px;
+  }
+}
+.messages {
+  @include t {
+    display: none;
+  }
+}

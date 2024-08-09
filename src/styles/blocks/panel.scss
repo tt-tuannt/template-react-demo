@@ -1,0 +1,33 @@
+.panel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: auto -40px -40px;
+  padding: 60px 40px 20px;
+  @include x {
+    margin: auto -24px -32px;
+    padding: 44px 24px 20px;
+  }
+  @include m {
+    margin: auto -16px -24px;
+    padding: 40px 16px 16px;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: $n1;
+    box-shadow: inset 1px 0px 0px $n2;
+    @include x {
+      top: 24px;
+    }
+    @include dark-common {
+      background: $n7;
+      box-shadow: inset 1px 0px 0px $n8;
+    }
+  }
+}

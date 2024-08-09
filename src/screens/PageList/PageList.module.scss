@@ -1,0 +1,8 @@
+@import "../../styles/helpers";
+
+.page {
+  padding: 100px;
+  @include m {
+    padding: 30px;
+  }
+}

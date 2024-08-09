@@ -1,0 +1,89 @@
+// common styles
+body {
+  min-width: 375px;
+  background: $n2;
+  @include inter;
+  @include base1-s;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -.01em;
+  color: $n7;
+  @include dark-body {
+    background: $n8;
+    color: $n1;
+  }
+}
+a {
+  text-decoration: none;
+}
+svg,
+img {
+  vertical-align: middle;
+}
+button {
+  background: none;
+}
+button,
+input,
+textarea {
+  @include inter;
+}
+.desktop {
+  &-hide {
+    @include d {
+      display: none !important;
+    }
+  }
+  &-show {
+    display: none !important;
+    @include d {
+      display: block !important;
+    }
+  }
+  &-text-right {
+    @include d {
+      text-align: right;
+    }
+  }
+}
+.tablet {
+  &-hide {
+    @include t {
+      display: none !important;
+    }
+  }
+  &-show {
+    display: none !important;
+    @include t {
+      display: block !important;
+    }
+  }
+}
+.mobile {
+  &-hide {
+    @include m {
+      display: none !important;
+    }
+  }
+  &-show {
+    display: none !important;
+    @include m {
+      display: block !important;
+    }
+  }
+}
+.recharts-rectangle.recharts-tooltip-cursor {
+  @include dark-common {
+    fill: $n6;
+  }
+}
+.recharts-curve.recharts-tooltip-cursor {
+  @include dark-common {
+    stroke: $n5;
+  }
+}
+.recharts-sector {
+  @include dark-common {
+    stroke: $n7;
+  }
+}

@@ -1,0 +1,47 @@
+@import "../../../styles/helpers";
+
+.cardHead {
+  @include m {
+    display: block;
+  }
+}
+.cardTitle {
+  @include m {
+    margin-bottom: 16px;
+  }
+}
+.details {
+  margin-bottom: 32px;
+  @include m {
+    margin-bottom: 24px;
+    text-align: center;
+  }
+}
+.title {
+  margin-bottom: 4px;
+}
+.line {
+  display: flex;
+  align-items: center;
+  @include caption2;
+  font-weight: 700;
+  color: $shades1;
+  @include m {
+    justify-content: center;
+  }
+}
+.balance {
+  margin-right: 4px;
+}
+.users {
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid $n3;
+  @include m {
+    margin-top: 24px;
+    padding-top: 24px;
+  }
+  @include dark {
+    border-color: $n6;
+  }
+}

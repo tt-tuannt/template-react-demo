@@ -1,0 +1,32 @@
+@import "../../../styles/helpers";
+
+.chart {
+  width: auto;
+  height: 230px;
+  @include x {
+    margin-left: -12px;
+  }
+  @include t {
+    max-width: 310px;
+    margin: 0 auto;
+  }
+  @include m {
+    padding-left: 10px;
+  }
+}
+.legend {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+  svg {
+    margin-bottom: 12px;
+  }
+}
+.title {
+  @include caption2;
+  font-weight: 500;
+  color: $n4;
+}
+.percent {
+  @include title1-s;
+}
